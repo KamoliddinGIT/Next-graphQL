@@ -2,26 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  gap: 100px;
+}
+
+@media (min-width: 1100px) {
+  footer {
+    width: 98%;
+    position: absolute;
+    bottom: 0;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    position: absolute;
+    bottom: -165px;
+  }
+} 
+
+.max-w-sm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.author {
+  margin-left: 10px;
+}
+
+.infos {
+  width: 105%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infos span {
+    display: flex;
+    flex-direction: column;
+  font-size: 13px;
+  color: #717070;
+}
+
+.infos span a {
+  font-size: 16px;
+}
+
+.posts {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  padding: 0 50px;
+  gap: 50px;
+  width: 100%;
+  min-height: 170vh;
+}
+
+.post {
+  min-height: 45vh;
+}
+
+/* -------------------scroll-bar----------------------- */
+
+html::-webkit-scrollbar{
+  width: 0.5rem;
+}
+
+html::-webkit-scrollbar-track{
+  background-color: white;
+}
+
+html::-webkit-scrollbar-thumb{
+  background-color: white;
 }
